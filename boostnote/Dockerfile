@@ -8,12 +8,21 @@
 #       `docker build -t boostnote .`
 #
 #       Run:
-#       `docker run -ti --name=boostnote -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix boostnote boostnote`
+#       ```
+#       docker run -ti --name=boostnote -d \
+#         -e DISPLAY=$DISPLAY \
+#         -v /tmp/.X11-unix:/tmp/.X11-unix \
+#         -v ~/.boostnote:/root/Boostnote \
+#         boostnote boostnote
+#       ```
 #
 #       Troubleshooting
 #
 #       Probably you'll need to grant your user access to the X server. You can do so using `xhost`:
 #       `xhost +SI:localuser:$(id -un)`
+#
+#       You can also add `docker` to the X server:
+#       `xhost local:docker`
 
 # Base docker image
 FROM debian:stretch
