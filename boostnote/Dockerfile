@@ -50,7 +50,7 @@ RUN apt-get update && apt-get install -y \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV BOOSTNOTE_VERSION 0.8.16
+ENV BOOSTNOTE_VERSION 0.8.19
 
 # download the source
 RUN buildDeps=' \
