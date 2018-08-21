@@ -32,4 +32,7 @@ RUN Xvfb :0 -ac -screen 0 1024x768x24 &
 # Export display for Chrome
 RUN export DISPLAY=:99
 
+# Update npm to latest version
+RUN npm i -g npm
+
 CMD ["node"]
